@@ -22,11 +22,7 @@ class Login {
 
     // Se resumio toda la comparacion
     userExists(user) {
-        if(this.users.indexOf(user) !== -1) {
-            return true;
-        } else {
-            return false;
-        }
+      return this.users.indexOf(user) !== -1;
     }
 
     // Registrando el usuario usando spread
@@ -40,6 +36,11 @@ class Login {
       let index = this.users.indexOf(user);
       this.users = this.users.filter(item => item !== user);
       this.passwords = this.passwords.filter(item => item !== this.passwords[index]);
+    }
+
+    checkPassword(user, password) {
+      let index = this.users.indexOf(user);
+      return index !== -1 && this.passwords[index] === password;
     }
 }
 
