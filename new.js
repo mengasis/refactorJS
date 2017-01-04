@@ -34,6 +34,13 @@ class Login {
         this.users.push(...[user]);
         this.passwords.push(...[password]);
     }
+
+    // Se minimizo el codigo para hacerlo mas legible
+    removeUser(user) {
+      let index = this.users.indexOf(user);
+      this.users = this.users.filter(item => item !== user);
+      this.passwords = this.passwords.filter(item => item !== this.passwords[index]);
+    }
 }
 
 let registeredUsers = {
