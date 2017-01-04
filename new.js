@@ -14,6 +14,11 @@ class Login {
           this.sessions.push(user);
         }
     }
+
+    // Fue resumido todo el recorrido
+    logout(user) {
+      this.sessions = this.sessions.filter(item => item !== user);
+    }
 }
 
 let registeredUsers = {
