@@ -52,6 +52,8 @@ class Login {
       }
       return false;
     }
+
+    /* Se elimino la funcion idx*/
 }
 
 let registeredUsers = {
