@@ -19,6 +19,16 @@ class Login {
     logout(user) {
       this.sessions = this.sessions.filter(item => item !== user);
     }
+
+    // Se resumio toda la comparacion
+    userExists(user) {
+      if(this.users.indexOf(user) !== -1){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
 }
 
 let registeredUsers = {
