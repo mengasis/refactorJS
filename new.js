@@ -38,9 +38,19 @@ class Login {
       this.passwords = this.passwords.filter(item => item !== this.passwords[index]);
     }
 
+    // Funcion minimizada
     checkPassword(user, password) {
       let index = this.users.indexOf(user);
       return index !== -1 && this.passwords[index] === password;
+    }
+
+    // Reutilizacion de la funcion checkPassword
+    updatePassword(user, oldPassword, newPassword) {
+      if(this.checkPassword(user, oldPassword)){
+        this.passwords[this.users.indexOf(user)] = newPassword;
+        return true;
+      }
+      return false;
     }
 }
 
